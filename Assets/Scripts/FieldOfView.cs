@@ -8,6 +8,10 @@ public class FieldOfView : MonoBehaviour
     [Range(0,360)]
     public float viewAngle;
 
+
+    public LayerMask homePheromoneMask;
+
+    public LayerMask foodMask;
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 

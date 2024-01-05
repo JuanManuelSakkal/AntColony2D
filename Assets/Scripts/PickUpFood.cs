@@ -14,6 +14,7 @@ public class PickUpFood : MonoBehaviour
             collisionInfo.gameObject.layer = 0;
             storedFood = collisionInfo.gameObject;
             gameObject.GetComponent<MoveAnt>().target = null;
+            gameObject.GetComponent<FieldOfView>().targetMask = gameObject.GetComponent<FieldOfView>().homePheromoneMask;
 
         }
     }
