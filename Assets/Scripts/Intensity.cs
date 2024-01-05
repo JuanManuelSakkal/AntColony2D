@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Intensity : MonoBehaviour
 {
-    public float intensity = 1f;
+    public float intensity = Mathf.Infinity;
 }

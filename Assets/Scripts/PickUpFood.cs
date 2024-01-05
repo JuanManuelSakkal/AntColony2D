@@ -15,7 +15,8 @@ public class PickUpFood : MonoBehaviour
             storedFood = collisionInfo.gameObject;
             gameObject.GetComponent<MoveAnt>().target = null;
             gameObject.GetComponent<FieldOfView>().targetMask = gameObject.GetComponent<FieldOfView>().homePheromoneMask;
-            gameObject.GetComponent<FieldOfView>().preference = Preference.Intensity;
+            gameObject.GetComponent<CreatePheromone>().currentPheromone = gameObject.GetComponent<CreatePheromone>().foodPheromone;
+            gameObject.GetComponent<CreatePheromone>().currentIntensity = gameObject.GetComponent<CreatePheromone>().initialIntensity;
 
         }
 
@@ -23,7 +24,8 @@ public class PickUpFood : MonoBehaviour
             Destroy(storedFood);
             gameObject.GetComponent<MoveAnt>().target = null;
             gameObject.GetComponent<FieldOfView>().targetMask = gameObject.GetComponent<FieldOfView>().foodMask;
-            gameObject.GetComponent<FieldOfView>().preference = Preference.Proximity;
+            gameObject.GetComponent<CreatePheromone>().currentPheromone = gameObject.GetComponent<CreatePheromone>().homePheromone;
+            gameObject.GetComponent<CreatePheromone>().currentIntensity = gameObject.GetComponent<CreatePheromone>().initialIntensity;
 
         }
 

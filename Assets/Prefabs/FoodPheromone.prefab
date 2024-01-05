@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3834736920466910615}
   - component: {fileID: 1770486304936286766}
   - component: {fileID: 2208574246838755897}
+  - component: {fileID: -5481750903923605955}
   - component: {fileID: 8832133607704169537}
-  - component: {fileID: 4602918568777667677}
+  - component: {fileID: -7544296556708386486}
   m_Layer: 8
-  m_Name: HomePheromone
+  m_Name: FoodPheromone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 651c8ac915b7b4f76a3c9d026b0b7b43, type: 2}
+  - {fileID: 2100000, guid: 1d57ccae07a2a430683ed54768aed455, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,6 +123,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!114 &-5481750903923605955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762875745433825823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b7a73cccfcd4c05afb336dbbce343e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestructDelay: 10
 --- !u!114 &8832133607704169537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0.9
---- !u!114 &4602918568777667677
+--- !u!114 &-7544296556708386486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

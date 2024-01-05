@@ -22,7 +22,7 @@ public class FieldOfView : MonoBehaviour
     public List<GameObject> visibleTargets = new List<GameObject>();
 
 
-    public Preference preference = Preference.Proximity;
+    public Preference preference = Preference.Intensity;
     void Start() {
         StartCoroutine(FindTargetsWithDelay(0.2f));
     }

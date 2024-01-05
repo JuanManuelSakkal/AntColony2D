@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965d5d01975b07641bd29b6c55b44861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 6.4
-  viewAngle: 95
+  viewRadius: 11.36
+  viewAngle: 360
   homePheromoneMask:
     serializedVersion: 2
     m_Bits: 256
@@ -296,6 +296,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   visibleTargets: []
+  preference: 0
 --- !u!58 &2132905984359150148
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -383,7 +384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homePheromone: {fileID: 3762875745433825823, guid: 8ec59097c3eae4022859d9a8ae992bce, type: 3}
-  pheromoneRate: 1
+  foodPheromone: {fileID: 3762875745433825823, guid: 989df67460beb4b4c98918171f64bec0, type: 3}
+  pheromoneRate: 0.57
+  initialIntensity: 0.9
+  currentIntensity: 0
+  currentPheromone: {fileID: 0}
 --- !u!1 &6005135516421113480
 GameObject:
   m_ObjectHideFlags: 0

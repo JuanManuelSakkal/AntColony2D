@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeAndSelfDestroy : MonoBehaviour
 {
-    public float selfDestructDelay = 10f;
+    public float selfDestructDelay = 20f;
     void Start() {
         StartCoroutine(SelfDestruct(selfDestructDelay));
     }
