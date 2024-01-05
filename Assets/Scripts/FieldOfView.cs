@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Preference{
+    Proximity,
+    Intensity
+}
 public class FieldOfView : MonoBehaviour
 {
     public float viewRadius;
@@ -17,6 +21,8 @@ public class FieldOfView : MonoBehaviour
 
     public List<GameObject> visibleTargets = new List<GameObject>();
 
+
+    public Preference preference = Preference.Proximity;
     void Start() {
         StartCoroutine(FindTargetsWithDelay(0.2f));
     }
@@ -25,14 +31,14 @@ public class FieldOfView : MonoBehaviour
         while (true) {
             yield return new WaitForSeconds(delay);
             FindVisibleTargets();
-            SetClosestTarget();
+            SetDesiredTarget();
         }
     }
 
-    void SetClosestTarget() {
+    void SetClosestTarget(List<GameObject> targets) {
         GameObject closestTarget = null;
         float closestDistance = Mathf.Infinity;
-        foreach (GameObject target in visibleTargets) {
+        foreach (GameObject target in targets) {
             float distance = Vector2.Distance(transform.position, target.transform.position);
             if (distance < closestDistance) {
                 closestTarget = target;
@@ -43,6 +49,33 @@ public class FieldOfView : MonoBehaviour
             gameObject.GetComponent<MoveAnt>().target = closestTarget;
         } else {
             gameObject.GetComponent<MoveAnt>().target = closestTarget;
+        }
+    }
+
+    void SetIntenseTarget() {
+        List<GameObject> intenseTargets = new List<GameObject>();
+        float highestIntensity = -Mathf.Infinity;
+        foreach (GameObject target in visibleTargets) {
+            if(target.GetComponent<Intensity>()){
+                float intensity = target.GetComponent<Intensity>().intensity;
+                if (intensity > highestIntensity) {
+                    intenseTargets.Add(target);
+                    highestIntensity = intensity;
+                }
+            }
+        }
+        SetClosestTarget(intenseTargets);
+    }
+
+    void SetDesiredTarget(){
+        switch (preference)
+        {
+            case Preference.Proximity:
+                SetClosestTarget(visibleTargets);
+                break;
+            case Preference.Intensity:
+                SetIntenseTarget();
+                break;
         }
     }
 
