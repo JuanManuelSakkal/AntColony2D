@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5481750903923605955}
   - component: {fileID: 8832133607704169537}
   - component: {fileID: -7544296556708386486}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: FoodPheromone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7a73cccfcd4c05afb336dbbce343e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfDestructDelay: 20
+  selfDestructDelay: 11.91

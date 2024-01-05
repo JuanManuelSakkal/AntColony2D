@@ -10,7 +10,7 @@ public class PickUpFood : MonoBehaviour
     {
         if (collisionInfo.gameObject.tag == "Food" && storedFood == null) {
             collisionInfo.gameObject.transform.parent = gameObject.transform;
-            collisionInfo.gameObject.transform.localPosition = new Vector3(0, 1.2f, 0);
+            collisionInfo.gameObject.transform.localPosition = new Vector3(0, 1f, 0);
             collisionInfo.gameObject.layer = 0;
             storedFood = collisionInfo.gameObject;
             gameObject.GetComponent<MoveAnt>().target = null;
@@ -29,9 +29,5 @@ public class PickUpFood : MonoBehaviour
 
         }
 
-    }
-    void Update()
-    {
-        
     }
 }

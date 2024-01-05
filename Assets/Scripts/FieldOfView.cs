@@ -8,9 +8,9 @@ public enum Preference{
 }
 public class FieldOfView : MonoBehaviour
 {
-    public float viewRadius;
+    public float viewRadius = 5.5f;
     [Range(0,360)]
-    public float viewAngle;
+    public float viewAngle = 110;
 
 
     public LayerMask homePheromoneMask;
@@ -20,6 +20,8 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstacleMask;
 
     public List<GameObject> visibleTargets = new List<GameObject>();
+
+    public List<GameObject> intenseTargets = new List<GameObject>();
 
 
     public Preference preference = Preference.Intensity;
@@ -47,20 +49,22 @@ public class FieldOfView : MonoBehaviour
         }
         if (closestTarget != null) {
             gameObject.GetComponent<MoveAnt>().target = closestTarget;
-        } else {
-            gameObject.GetComponent<MoveAnt>().target = closestTarget;
         }
     }
 
     void SetIntenseTarget() {
-        List<GameObject> intenseTargets = new List<GameObject>();
-        float highestIntensity = -Mathf.Infinity;
+        intenseTargets.Clear();
+        float highestIntensity = 0;
         foreach (GameObject target in visibleTargets) {
             if(target.GetComponent<Intensity>()){
                 float intensity = target.GetComponent<Intensity>().intensity;
                 if (intensity > highestIntensity) {
+                    intenseTargets.Clear();
                     intenseTargets.Add(target);
                     highestIntensity = intensity;
+                }
+                if (intensity == highestIntensity) {
+                    intenseTargets.Add(target);
                 }
             }
         }
