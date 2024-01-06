@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homePheromone: {fileID: 3762875745433825823, guid: 8ec59097c3eae4022859d9a8ae992bce, type: 3}
   foodPheromone: {fileID: 3762875745433825823, guid: 989df67460beb4b4c98918171f64bec0, type: 3}
-  pheromoneRate: 1.68
+  pheromoneRate: 1.14
   initialIntensity: 0.9
   currentIntensity: 0
   currentPheromone: {fileID: 0}
